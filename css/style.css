@@ -1,0 +1,107 @@
+body{
+	display: flex;
+	height: 100vh;
+	flex-flow: column nowrap;
+	margin: 0;
+	padding: 0;
+}
+.button-top{
+	display: flex;
+	height: 50vh;
+	justify-content: center;
+	align-items: center;
+	background-color: #404FDE;
+}
+.hover-button{
+	position: relative;
+	height: 70px;
+	padding: 5px 45px;
+	font-size: 25px;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 50px;
+	color: #fff;
+	background-color: #9920FF; 
+	overflow: hidden;
+	z-index: 1;
+	outline: none;
+}
+.hover-button:before{
+	position: absolute;
+	border-radius: 50px;
+	width: 0%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	background-color: #7D00E6;
+	transition: .5s;
+	z-index: -1;	
+}
+.hover-button:hover:before{
+	width: 100%;
+}
+
+
+.button-bottom{
+	background: #000000;
+	display: flex;
+	height: 50vh;
+	justify-content: center;
+	align-items: center;
+}
+.click-button{
+    position: relative;
+    cursor: pointer;
+	height: 70px;
+	width: 50%;
+	font-size: 25px;
+	text-transform: uppercase;
+	outline: none;
+	color: #FFFFFF;
+    background-color: #242424;
+    z-index: 0;
+    border-radius: 10px;
+    border: none;
+}
+.click-button:after{
+	position: absolute;
+    z-index: -1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #242424;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+.click-button:before{
+	content: '';
+	position: absolute;
+	z-index: -1;
+    background: linear-gradient(45deg, #D800FF, #9C00FF, #6B00FD, #3C00FF, #0078FF, #00FFF0, #00FFA8, #0072FF, #001EFF, #5900FD, #7200FF, #A200FF, #D200FF);
+    top: -2px;
+    left:-2px;
+    background-size: 500%;
+    filter: blur(2px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: gradient 30s infinite;
+    opacity: 0;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+.click-button:hover:before{
+    opacity: 1;
+}
+.click-button:active{
+    color: #000000;
+}
+.click-button:active:after{
+    background: transparent;
+}
+@keyframes gradient{
+    0% { background-position: 0; }
+    50% { background-position: 500% 0; }
+    100% { background-position: 0; }
+}
